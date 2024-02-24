@@ -15,17 +15,25 @@ internal class Input
 
     public string GetTitle()
     {
-        string? titleInput = Console.ReadLine();
-        
-        if (titleInput != null)
+        string? titleInput = null; 
+        bool titleInputPresent = false;
+
+        while (!titleInputPresent)
         {
-            return titleInput;
-        }
-        else
-        {
-            return "No title";
+            titleInput = Console.ReadLine();
+
+            if (string.IsNullOrEmpty(titleInput)) 
+            {
+                Console.WriteLine("Title cannot be empty. Please enter a title.");
+                Console.Write("Enter title: ");
+            }
+            else
+            {
+                titleInputPresent = true;
+            }
         }
 
+        return titleInput!; 
     }
 
 
@@ -44,11 +52,12 @@ internal class Input
                 if (parsedDate.Date < DateTime.Today)
                 {
                     Console.WriteLine("The deadline cannot be in the past. Please enter a future date.");
-                    Console.Write("Enter valid deadline (DD-MM-YYYY): ");
+                    Console.Write("Enter future deadline (DD-MM-YYYY): ");
                 }
                 else if (!IsDeadlineUnique(parsedDate))
                 {
                     Console.WriteLine("The deadline is already taken. Please enter a unique deadline.");
+                    Console.Write("Enter unique deadline (DD-MM-YYYY): ");
                 }
                 else
                 {
