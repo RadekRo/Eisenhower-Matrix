@@ -107,7 +107,7 @@ namespace Eisenhower_Matrix
                     int id = 0;
                     display.DisplayQuestion("Input task title: ");
                     string userInputTitle = input.GetTitle();
-                    display.DisplayQuestion("Input deadline in format DD-MM: ");
+                    display.DisplayQuestion("Input deadline in format DD-MM-YYYY: ");
                     var deadline = input.GetDeadline();
                     display.DisplayQuestion("Is your task important? (Y/N)");
                     string importanceStatusInput = input.GetImportanceStatus();

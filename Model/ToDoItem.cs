@@ -42,7 +42,7 @@ public class ToDoItem
     public override string ToString()
     {
         ItemMark = IsDone ? 'X' : ' ';
-        return $"[{ItemMark}] {Deadline.Day}-{Deadline.Month} {Title}";
+        return $"[{ItemMark}] {Deadline.Day}-{Deadline.Month}-{Deadline.Year} {Title}";
     }
 
 

@@ -24,14 +24,18 @@ internal class Input
 
     public DateTime GetDeadline()
     {
-        // input provides only day and month - year is firmed to 2023
         var deadlineInput = Console.ReadLine();
         
-        string dateFormat = "dd-MM";
+        string dateFormat = "dd-MM-yyyy";
 
         DateTime parsedDate;
         if (DateTime.TryParseExact(deadlineInput, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate))
         {
+            if (parsedDate.Date < DateTime.Today)
+            {
+                Console.WriteLine("The deadline cannot be in the past. Please enter a future date.");
+                return DateTime.MinValue; // Indicating an invalid or past deadline
+            }
             return parsedDate;
         }
         return parsedDate;
