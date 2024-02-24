@@ -19,8 +19,10 @@ namespace Eisenhower_Matrix.UnitTests
                 .Returns("Test Title"); 
             var matrixDbManagerMock = new Mock<MatrixDbManager>(); 
             var input = new Input(matrixDbManagerMock.Object, consoleServiceMock.Object);
+
             // Act
             var title = input.GetTitle();
+
             // Assert
             Assert.Equals("Test Title", title);
         }
