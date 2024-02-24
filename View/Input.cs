@@ -37,12 +37,12 @@ internal class Input
                 if (parsedDate.Date < DateTime.Today)
                 {
                     Console.WriteLine("The deadline cannot be in the past. Please enter a future date.");
-                    Console.Write("Enter valid date (DD-MM-YYYY): ");
+                    Console.Write("Enter valid deadline (DD-MM-YYYY): ");
                 }
-            }
-            else
-            {
-                validDateEntered = true;
+                else
+                {
+                    validDateEntered = true;
+                }
             }
         }
         return parsedDate;
