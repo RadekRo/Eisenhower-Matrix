@@ -1,4 +1,5 @@
-﻿using Eisenhower_Matrix.Manager;
+﻿using Eisenhower_Matrix.Interfaces;
+using Eisenhower_Matrix.Manager;
 using System.Globalization;
 
 namespace Eisenhower_Matrix.View;
@@ -7,10 +8,12 @@ internal class Input
 {
     
     private readonly MatrixDbManager _matrixDbManager;
+    private readonly IConsoleService _consoleService;
 
-    public Input(MatrixDbManager matrixDbManager)
+    public Input(MatrixDbManager matrixDbManager, IConsoleService consoleService)
     {
         _matrixDbManager = matrixDbManager;
+        _consoleService = consoleService;
     }
 
     public string GetTitle()
@@ -20,12 +23,12 @@ internal class Input
 
         while (!titleInputPresent)
         {
-            titleInput = Console.ReadLine();
+            titleInput = _consoleService.ReadLine();
 
             if (string.IsNullOrEmpty(titleInput)) 
             {
-                Console.WriteLine("Title cannot be empty. Please enter a title.");
-                Console.Write("Enter title: ");
+                _consoleService.WriteLine("Title cannot be empty. Please enter a title.");
+                _consoleService.Write("Enter title: ");
             }
             else
             {

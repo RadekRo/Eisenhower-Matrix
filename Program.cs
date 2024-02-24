@@ -1,4 +1,5 @@
-﻿using Eisenhower_Matrix.Manager;
+﻿using Eisenhower_Matrix.Interfaces;
+using Eisenhower_Matrix.Manager;
 using Eisenhower_Matrix.Model;
 using Eisenhower_Matrix.View;
 
@@ -14,9 +15,10 @@ namespace Eisenhower_Matrix
            
 
             var manager = new MatrixDbManager();
+            var console = new ConsoleService();
 
             Console.WriteLine(manager.TestConnection());
-            var input = new Input(manager);
+            var input = new Input(manager, console);
             var display = new Display();
             string currentOption = "T";
 
