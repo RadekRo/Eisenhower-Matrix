@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eisenhower Matrix", "Eisenhower Matrix.csproj", "{BEAD97E1-AFA4-4E7A-9295-DF2B7EF875E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eisenhower Matrix", "Eisenhower Matrix.csproj", "{BEAD97E1-AFA4-4E7A-9295-DF2B7EF875E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EisenHower Matrix Tests", "..\EisenHower Matrix Tests\EisenHower Matrix Tests.csproj", "{AD18A515-C56A-4E3D-9B96-8DDC9845FBED}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BEAD97E1-AFA4-4E7A-9295-DF2B7EF875E4} = {BEAD97E1-AFA4-4E7A-9295-DF2B7EF875E4}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{BEAD97E1-AFA4-4E7A-9295-DF2B7EF875E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEAD97E1-AFA4-4E7A-9295-DF2B7EF875E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEAD97E1-AFA4-4E7A-9295-DF2B7EF875E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD18A515-C56A-4E3D-9B96-8DDC9845FBED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD18A515-C56A-4E3D-9B96-8DDC9845FBED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD18A515-C56A-4E3D-9B96-8DDC9845FBED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD18A515-C56A-4E3D-9B96-8DDC9845FBED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
