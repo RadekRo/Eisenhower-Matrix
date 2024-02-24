@@ -52,11 +52,18 @@ namespace Eisenhower_Matrix
                     ConsoleKeyInfo keyInfo = Console.ReadKey(true);
                     if (keyInfo.Key == ConsoleKey.DownArrow)
                     {
-                        SelectedTask++;
+                        var itemList = toDoMatrix.GetQuarter(SelectedQuarter).ToDoItems;
+                        if (SelectedTask < itemList.Count - 1) 
+                        {
+                            SelectedTask++;
+                        }
                     }
                     if (keyInfo.Key == ConsoleKey.UpArrow)
                     {
-                        SelectedTask--;
+                        if (SelectedTask > 0)
+                        {
+                            SelectedTask--;
+                        }
                     }
                     if (keyInfo.Key == ConsoleKey.Enter)
                     {

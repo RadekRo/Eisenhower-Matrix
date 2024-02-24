@@ -8,9 +8,9 @@ internal class Input
 
     public string GetTitle()
     {
-        var titleInput = Console.ReadLine();
+        string? titleInput = Console.ReadLine();
         
-        if (titleInput != "")
+        if (titleInput != null)
         {
             return titleInput;
         }
@@ -53,7 +53,7 @@ internal class Input
 
     public string GetMark()
     {
-        var markInput = Console.ReadLine();
+        string? markInput = Console.ReadLine();
         if (markInput != null)
         {
             return markInput;
@@ -74,9 +74,9 @@ internal class Input
 
     public string GetImportanceStatus()
     {
-        var importanceStatusInput = Console.ReadLine();
+        string? importanceStatusInput = Console.ReadLine();
 
-        if (importanceStatusInput != "")
+        if (importanceStatusInput != null)
         {
             return importanceStatusInput;
         }
@@ -93,9 +93,9 @@ internal class Input
 
     public string GetStatus()
     {
-        var statusInput = Console.ReadLine();
+        string? statusInput = Console.ReadLine();
 
-        if (statusInput != "")
+        if (statusInput != null)
         {
             return statusInput;
         }
