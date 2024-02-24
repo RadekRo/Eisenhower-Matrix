@@ -1,10 +1,17 @@
-﻿using System.Globalization;
+﻿using Eisenhower_Matrix.Manager;
+using System.Globalization;
 
 namespace Eisenhower_Matrix.View;
 
 internal class Input
 {
+    
+    private readonly MatrixDbManager _matrixDbManager;
 
+    public Input(MatrixDbManager matrixDbManager)
+    {
+        _matrixDbManager = matrixDbManager;
+    }
 
     public string GetTitle()
     {
@@ -39,6 +46,10 @@ internal class Input
                     Console.WriteLine("The deadline cannot be in the past. Please enter a future date.");
                     Console.Write("Enter valid deadline (DD-MM-YYYY): ");
                 }
+                else if (!IsDeadlineUnique(parsedDate))
+                {
+                    Console.WriteLine("The deadline is already taken. Please enter a unique deadline.");
+                }
                 else
                 {
                     validDateEntered = true;
@@ -49,6 +60,11 @@ internal class Input
               
     }
 
+    private bool IsDeadlineUnique(DateTime deadline)
+    {
+        var allItems =  _matrixDbManager.GetAllItems();
+        return allItems.All(item => item.Deadline.Date != deadline.Date);
+    }
 
 
     public string GetMark()

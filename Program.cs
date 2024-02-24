@@ -16,7 +16,7 @@ namespace Eisenhower_Matrix
             var manager = new MatrixDbManager();
 
             Console.WriteLine(manager.TestConnection());
-            var input = new Input();
+            var input = new Input(manager);
             var display = new Display();
             string currentOption = "T";
 
