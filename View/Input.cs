@@ -24,19 +24,26 @@ internal class Input
 
     public DateTime GetDeadline()
     {
-        var deadlineInput = Console.ReadLine();
-        
-        string dateFormat = "dd-MM-yyyy";
+        DateTime parsedDate = DateTime.MinValue;
+        bool validDateEntered = false;
 
-        DateTime parsedDate;
-        if (DateTime.TryParseExact(deadlineInput, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate))
+        while (!validDateEntered)
         {
-            if (parsedDate.Date < DateTime.Today)
+            var deadlineInput = Console.ReadLine();
+            string dateFormat = "dd-MM-yyyy";
+
+            if (DateTime.TryParseExact(deadlineInput, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate))
             {
-                Console.WriteLine("The deadline cannot be in the past. Please enter a future date.");
-                return DateTime.MinValue; // Indicating an invalid or past deadline
+                if (parsedDate.Date < DateTime.Today)
+                {
+                    Console.WriteLine("The deadline cannot be in the past. Please enter a future date.");
+                    Console.Write("Enter valid date (DD-MM-YYYY): ");
+                }
             }
-            return parsedDate;
+            else
+            {
+                validDateEntered = true;
+            }
         }
         return parsedDate;
               
