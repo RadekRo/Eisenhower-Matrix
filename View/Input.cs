@@ -29,7 +29,7 @@ internal class Input
 
         while (!validDateEntered)
         {
-            var deadlineInput = Console.ReadLine();
+            string? deadlineInput = Console.ReadLine();
             string dateFormat = "dd-MM-yyyy";
 
             if (DateTime.TryParseExact(deadlineInput, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate))
