@@ -30,7 +30,6 @@ The Eisenhower Matrix Application is more than just a tool; it's a productivity 
 # Application Overview
 
 ```
-"
     |            URGENT              |           NOT URGENT           |  
   --|--------------------------------|--------------------------------|--
     | 1. [ ] 9-6  go to the doctor   |                                |
@@ -60,5 +59,10 @@ The Eisenhower Matrix Application is more than just a tool; it's a productivity 
   N |                                |                                |
   T |                                |                                |
   --|--------------------------------|--------------------------------|--
-  "
+Select an option:
+[A]dd task
+[D]elete selected task
+[S]elect task
+[Q]uit
+Your choice: _
   ```
